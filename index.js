@@ -16,19 +16,20 @@
 
 const boardContainer = document.querySelector('#boardContainer');
 
-let a = 0;
+let row = 0;
+let column = 0;
 
 function makeDivs(number) {
-    
-    for (let i = 0; i < number; i++) {
+    while(row < number) {
         const rows = document.createElement('div');
         rows.classList.add('rows');
         boardContainer.appendChild(rows);
-        while (a < number); {
+        row++;
+        while (column < number); {
             const squares = document.createElement('div');
             squares.classList.add('squares');
             rows.appendChild(squares);
-            a++;
+            column++;
         }
     }
 }
