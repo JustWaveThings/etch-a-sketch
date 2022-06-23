@@ -14,7 +14,7 @@
     // make x number of containers, in each container make x number of divs -- guaranteed to always be a square and always render. 
 
 
-const boardContainer = document.querySelector('#boardContainer');
+const boardContainer = document.querySelector("body > div");;
 
 foo = 8;
 
