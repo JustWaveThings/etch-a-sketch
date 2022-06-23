@@ -19,22 +19,29 @@ const boardContainer = document.querySelector('#boardContainer');
 let row = 0;
 let column = 0;
 
+document.write("starting function.")
 function makeDivs(number) {
-    while(row < number) {
-        const rows = document.createElement('div');
-        rows.classList.add('rows');
-        boardContainer.appendChild(rows);
-        row++;
+    document.write("in function - at top")
+    while (row < number) {
+        document.write("in row while.")
+        // const rows = document.createElement('div');
+        // rows.classList.add('rows');
+        // boardContainer.appendChild(rows);
+
         while (column < number); {
-            const squares = document.createElement('div');
-            squares.classList.add('squares');
-            rows.appendChild(squares);
+            document.write("in column while")
+            // const squares = document.createElement('div');
+            // squares.classList.add('squares');
+            // rows.appendChild(squares);
             column++;
+            document.write(`${column} has column been increased?`)
         }
+        row++;
+        document.write(`${row} has row been increased?`);
     }
 }
 
-makeDivs(8); // makes 8 divs under parent div 'boardContainer' with class 'rows', and creates 8 divs in each row container named 'squares'
+makeDivs(1); // makes 8 divs under parent div 'boardContainer' with class 'rows', and creates 8 divs in each row container named 'squares'
 
  
 
