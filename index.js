@@ -13,25 +13,27 @@
 
     // make x number of containers, in each container make x number of divs -- guaranteed to always be a square and always render. 
 
-// funct
-
-
-
-
-
 
 const boardContainer = document.querySelector('#boardContainer');
 
 function makeDivs(number) {
+    let a = 0;
     for (let i = 0; i < number; i++) {
         const rows = document.createElement('div');
         rows.classList.add('rows');
         boardContainer.appendChild(rows);
+        while (a < number); {
+            const squares = document.createElement('div');
+            squares.classList.add('squares');
+            rows.appendChild(squares);
+            a++;
+        }
     }
 }
-makeDivs(8); // makes 8 divs under parent div 'boardcontainer
 
+makeDivs(8); // makes 8 divs under parent div 'boardContainer' with class 'rows', and creates 8 divs in each row container named 'squares'
 
+ 
 
 // // not using this function -- thought of new way to do this...
 // function etchNumberOfSquares(number) {
