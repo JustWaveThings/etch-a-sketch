@@ -16,37 +16,27 @@
 
 const boardContainer = document.querySelector('#boardContainer');
 
-let row = 0;
-let column = 0;
+foo = 8;
 
-document.write("starting function.")
-function makeDivs(number) {
-    document.write("in function - at top")
-    while (row < number) {
-        document.write("in row while.")
-        // const rows = document.createElement('div');
-        // rows.classList.add('rows');
-        // boardContainer.appendChild(rows);
+function makeDivs(foo) {
+    let row = 0;
+    let column = 0;
 
-        while (column < number); {
-            document.write("in column while")
-            // const squares = document.createElement('div');
-            // squares.classList.add('squares');
-            // rows.appendChild(squares);
+    while (row < foo) {
+        const rows = document.createElement('div');
+        rows.classList.add('rows');
+        boardContainer.appendChild(rows);
+        column = 0;
+
+        while (column < foo) {
+            const squares = document.createElement('div');
+            squares.classList.add('squares');
+            rows.appendChild(squares);
             column++;
-            document.write(`${column} has column been increased?`)
+            
         }
         row++;
-        document.write(`${row} has row been increased?`);
     }
 }
 
-makeDivs(1); // makes 8 divs under parent div 'boardContainer' with class 'rows', and creates 8 divs in each row container named 'squares'
-
- 
-
-// // not using this function -- thought of new way to do this...
-// function etchNumberOfSquares(number) {
-//     number = parseInt(prompt("How many squares across?", "16"));
-//     return (number != null && number > 0 && Number.isInteger(number) && number <= 100 ? (number * number) : "Choose integer between 1-100.")
-// }
+ makeDivs(foo);
