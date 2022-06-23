@@ -11,18 +11,30 @@
 
     // function to get correct number of divs based on one input
 
-function etchNumberOfSquares(number) {
-    number = parseInt(prompt("How many squares across?", "16"));
-    return (number != null && number > 0 && Number.isInteger(number) && number <= 100 ? (number * number) : "Choose integer between 1-100.")
+    // make x number of containers, in each container make x number of divs -- guaranteed to always be a square and always render. 
+
+// funct
+
+
+
+
+
+
+const boardContainer = document.querySelector('#boardContainer');
+
+function makeDivs(number) {
+    for (let i = 0; i < number; i++) {
+        const rows = document.createElement('div');
+        rows.classList.add('rows');
+        boardContainer.appendChild(rows);
+    }
 }
-console.log(etchNumberOfSquares());
+makeDivs(8); // makes 8 divs under parent div 'boardcontainer
 
 
 
-const container = document.querySelector("#container");
-
-
-const squares = document.createElement("div");
-squares.classList.add("squares");
-
-container.appendChild(squares);
+// // not using this function -- thought of new way to do this...
+// function etchNumberOfSquares(number) {
+//     number = parseInt(prompt("How many squares across?", "16"));
+//     return (number != null && number > 0 && Number.isInteger(number) && number <= 100 ? (number * number) : "Choose integer between 1-100.")
+// }
