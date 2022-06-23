@@ -9,8 +9,17 @@
 
 // try to dom manipulate my way into 256 divs
 
+    // function to get correct number of divs based on one input
 
+function etchNumberOfSquares(number) {
+    number = parseInt(prompt("How many squares across", "16"));
+    console.log(number);
+    console.log(typeof(number));
+    return (number != null && number > 0 && Number.isInteger(number) && number <= 100 ? (number * number) : "Choose integer between 1-100.")
 
+}
+
+console.log(etchNumberOfSquares());
 
 const container = document.querySelector("#container");
 
