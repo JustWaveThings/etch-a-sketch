@@ -16,8 +16,10 @@
 
 const boardContainer = document.querySelector('#boardContainer');
 
+let a = 0;
+
 function makeDivs(number) {
-    let a = 0;
+    
     for (let i = 0; i < number; i++) {
         const rows = document.createElement('div');
         rows.classList.add('rows');
