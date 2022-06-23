@@ -13,10 +13,11 @@
 
     // make x number of containers, in each container make x number of divs -- guaranteed to always be a square and always render. 
 
+const boardContainer = document.querySelector("body > div"); // holds gameboard
 
-const boardContainer = document.querySelector("body > div");;
 
-foo = 8;
+
+foo = 16;
 
 function makeDivs(foo) {
     let row = 0;
@@ -39,4 +40,18 @@ function makeDivs(foo) {
     }
 }
 
- makeDivs(foo);
+makeDivs(foo);
+
+
+const sketch = document.querySelectorAll('.squares'); // selects all divs so that I can apply an active class on mouseover
+
+sketch.forEach((squares) => {
+    squares.addEventListener('mouseover', function (e) {
+        squares.setAttribute('style', 'background-color: blue;');
+    });
+});
+
+
+// sketch.addEventListener("mouseover", () => {
+//     e.target.addClass = '.active';
+// })
