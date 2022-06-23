@@ -1,0 +1,21 @@
+/* requirements and pseudocode 
+
+- initally we need a 16x16 grid of div squares
+    - keep in mind, we will need to be able to get user input to add divs in same overall space, within a refresh the page function (limit 100x100 divs)
+- add a css class to the divs with hover to change color 
+- 
+*/
+
+
+// try to dom manipulate my way into 256 divs
+
+
+
+
+const container = document.querySelector("#container");
+
+
+const squares = document.createElement("div");
+squares.classList.add("squares");
+
+container.appendChild(squares);
