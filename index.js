@@ -1,17 +1,4 @@
-/* requirements and pseudocode 
 
-- initally we need a 16x16 grid of div squares
-    - keep in mind, we will need to be able to get user input to add divs in same overall space, within a refresh the page function (limit 100x100 divs)
-- add a css class to the divs with hover to change color 
-- 
-*/
-
-
-// try to dom manipulate my way into 256 divs
-
-    // function to get correct number of divs based on one input
-
-    // make x number of containers, in each container make x number of divs -- guaranteed to always be a square and always render. 
 
 const boardContainer = document.querySelector("body > div"); // holds gameboard
 
@@ -43,15 +30,27 @@ function makeDivs(foo) {
 makeDivs(foo);
 
 
-const sketch = document.querySelectorAll('.squares'); // selects all divs so that I can apply an active class on mouseover
+const sketch = document.querySelectorAll('.squares'); // selects all divs so that I can apply an style on mouseover
 
 sketch.forEach((squares) => {
-    squares.addEventListener('mouseover', function (e) {
+    squares.addEventListener('mouseover', () => {
         squares.setAttribute('style', 'background-color: blue;');
     });
 });
 
+const topOfPage = document.querySelector("body > span");
+const reload = document.createElement('button');
+reload.classList.add('reload');
+reload.textContent = 'Erase and Redraw Sketch Board';
 
-// sketch.addEventListener("mouseover", () => {
-//     e.target.addClass = '.active';
-// })
+topOfPage.appendChild(reload);
+
+
+// adding listener to reload button 
+reload.addEventListener('click', fireReload);
+
+// dummy function to test functionality
+function fireReload(foo) {
+    foo = +prompt("New Board Time! How many squares across should I draw?", 16);
+    (foo > 7 && foo <= 100 && Number.isInteger(foo)) ? true /* true condition i need to work on */ : alert("Make sure you've input an integer between 8 and 100!")
+}

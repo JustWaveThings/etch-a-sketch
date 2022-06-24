@@ -3,6 +3,7 @@
     border: 5px solid rgb(0, 0, 0);
     height: 500px;
     width: 500px;
+   
 }
 
 .rows,
@@ -25,5 +26,37 @@
 }
 
 .active {
-    background-color: blue;
+    background-color: rgb(55, 122, 145);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    /* flex: 1 1 auto; */
+    text-align: center;
+    font-size: medium;
+    color: black;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+.reload {
+    background-color: rgb(55, 122, 145);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+
+}
+
+
+.reload:hover {
+  background-color: #4CAF50;
+  color: white;
 }
