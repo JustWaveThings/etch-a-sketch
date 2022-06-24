@@ -4,9 +4,9 @@ const boardContainer = document.querySelector("body > div"); // holds gameboard
 
 
 
-foo = 16;
 
-function makeDivs(foo) {
+
+function makeDivs(foo = 16) {
     let row = 0;
     let column = 0;
 
@@ -25,32 +25,58 @@ function makeDivs(foo) {
         }
         row++;
     }
+
+    const sketch = document.querySelectorAll(".squares"); // selects all divs so that I can apply an style on mouseover
+
+    sketch.forEach((squares) => {
+    squares.addEventListener("mouseover", () => {
+        squares.setAttribute("style", "background-color: rgb(55, 122, 145);");
+    });
+    });
 }
 
-makeDivs(foo);
+// draws board
+makeDivs(); 
+
+// removes board items interatively
+function removeDivs() {
+    const allRows = document.querySelectorAll(".rows");
+    for (let i = 0; i < allRows.length; i++) {
+        allRows[i].remove();
+    }
+}
 
 
-const sketch = document.querySelectorAll('.squares'); // selects all divs so that I can apply an style on mouseover
-
-sketch.forEach((squares) => {
-    squares.addEventListener('mouseover', () => {
-        squares.setAttribute('style', 'background-color: blue;');
-    });
-});
 
 const topOfPage = document.querySelector("body > span");
+const title = document.createElement('h1');
 const reload = document.createElement('button');
+title.classList.add('header');
 reload.classList.add('reload');
+title.textContent = "Etch-a-Sketch by JustWaveThings";
 reload.textContent = 'Erase and Redraw Sketch Board';
 
+topOfPage.appendChild(title);
 topOfPage.appendChild(reload);
 
 
 // adding listener to reload button 
 reload.addEventListener('click', fireReload);
 
-// dummy function to test functionality
+// erases and reloads board 
 function fireReload(foo) {
-    foo = +prompt("New Board Time! How many squares across should I draw?", 16);
-    (foo > 7 && foo <= 100 && Number.isInteger(foo)) ? true /* true condition i need to work on */ : alert("Make sure you've input an integer between 8 and 100!")
+    foo = +prompt("New Board Time! How many squares across should we draw? \n(max: 150)", 16);
+    if (foo >= 8 && foo <= 150 && Number.isInteger(foo)) {
+        removeDivs();
+        makeDivs(foo);
+    } else {
+        alert("Make sure you've input a whole number between 8 and 150!\nTry again.");
+    }
 }
+
+
+// current problems (2);
+
+// how to reset divs to white on reload button click
+
+// how to redraw board to foo input 
